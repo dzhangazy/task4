@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+.portfolio-layout {
+  display: grid;
+  grid-template-areas:
+    "portfolio-header portfolio-header"
+    "projects info"
+    "portfolio-footer portfolio-footer";
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 30px;
+  padding: 30px;
+  min-height: 700px;
+}
+.portfolio-header {
+  grid-area: portfolio-header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 25px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.portfolio-logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+.portfolio-nav {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+.portfolio-nav li a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+.portfolio-nav li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+.projects-area {
+  grid-area: projects;
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 15px;
+  border-left: 4px solid #667eea;
+}
+.projects-title {
+  color: #667eea;
+  font-size: 24px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.project-card:hover {
+  transform: translateX(10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.project-title {
+  color: #667eea;
+  font-size: 20px;
+  font-weight: bold;
+}
+.project-description {
+  color: #666;
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 15px;
+}
+.project-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+.project-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+.info-sidebar {
+  grid-area: info;
+  background: #e9ecef;
+  padding: 30px;
+  border-radius: 15px;
+}
+.sidebar-section {
+  margin-bottom: 30px;
+}
+.sidebar-title {
+  color: #667eea;
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+.skills-list {
+  list-style: none;
+}
+.skills-list li {
+  background: white;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  border-left: 3px solid #667eea;
+}
+.skills-list li:hover {
+  background: #667eea;
+  color: white;
+  transform: translateX(5px);
+}
+.portfolio-footer {
+  grid-area: portfolio-footer;
+  background: #343a40;
+  color: white;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.code-explanation {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+  color: #666;
+}
+.code-block {
+  background: #343a40;
+  color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: "Courier New", monospace;
+  margin: 10px 0;
+  overflow-x: auto;
+  font-size: 14px;
+}
+@media (max-width: 768px) {
+  .portfolio-layout {
+    grid-template-areas:
+      "portfolio-header"
+      "projects"
+      "info"
+      "portfolio-footer";
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .portfolio-header {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .portfolio-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
